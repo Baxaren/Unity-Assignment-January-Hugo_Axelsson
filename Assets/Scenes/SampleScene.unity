@@ -203,13 +203,15 @@ GameObject:
   - component: {fileID: 367845328}
   - component: {fileID: 367845327}
   - component: {fileID: 367845326}
+  - component: {fileID: 367845329}
+  - component: {fileID: 367845330}
   m_Layer: 0
-  m_Name: Pouncer
+  m_Name: Pouncer Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &367845325
 Transform:
   m_ObjectHideFlags: 0
@@ -289,6 +291,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367845324}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &367845329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367845324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f068f557a7170c14ca2280ce0a5056af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!143 &367845330
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367845324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &484054055
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,13 +333,15 @@ GameObject:
   - component: {fileID: 484054059}
   - component: {fileID: 484054058}
   - component: {fileID: 484054057}
+  - component: {fileID: 484054060}
+  - component: {fileID: 484054061}
   m_Layer: 0
-  m_Name: Sprinter
+  m_Name: Sprinter Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &484054056
 Transform:
   m_ObjectHideFlags: 0
@@ -387,6 +421,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484054055}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &484054060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484054055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bace566888bd17449247b41c33cd3b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controller: {fileID: 0}
+  Input: {fileID: 0}
+  MoveVector: {x: 0, y: 0, z: 0}
+  InputVector: {x: 0, y: 0}
+  PlayerSpeed: 0
+  PlayerRotateSpeed: 0
+  GravityVector: {x: 0, y: 0, z: 0}
+--- !u!143 &484054061
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484054055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &503396686
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +839,7 @@ GameObject:
   - component: {fileID: 996374898}
   - component: {fileID: 996374897}
   - component: {fileID: 996374899}
+  - component: {fileID: 996374900}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -925,6 +997,21 @@ MonoBehaviour:
   m_DefaultActionMap: Character
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &996374900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996374891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f6e375d9f46ef4c97c8fa841f830cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprinter: {fileID: 484054055}
+  Jumper: {fileID: 2029084724}
+  Pouncer: {fileID: 367845324}
 --- !u!1 &1144357101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,7 +1136,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576492614}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1131,13 +1218,15 @@ GameObject:
   - component: {fileID: 2029084728}
   - component: {fileID: 2029084727}
   - component: {fileID: 2029084726}
+  - component: {fileID: 2029084729}
+  - component: {fileID: 2029084730}
   m_Layer: 0
-  m_Name: Jumper
+  m_Name: Jumper Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2029084725
 Transform:
   m_ObjectHideFlags: 0
@@ -1217,6 +1306,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029084724}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2029084729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029084724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24429190c7514384c9a50892a1824c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!143 &2029084730
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029084724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2040377082
 GameObject:
   m_ObjectHideFlags: 0

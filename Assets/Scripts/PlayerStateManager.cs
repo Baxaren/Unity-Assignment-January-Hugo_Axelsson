@@ -5,21 +5,13 @@ using UnityEngine.InputSystem;
 
 public partial class PlayerStateManager : MonoBehaviour
 {
-    private void Awake() {
+    public virtual void Awake() {
         Controller = GetComponent<CharacterController>();
         Input = GetComponent<PlayerInput>();
         PlayerSpeed = 10f;
         PlayerRotateSpeed = 180;
 
         GravityVector = new Vector3(0, -9.81f, 0);
-    }
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
