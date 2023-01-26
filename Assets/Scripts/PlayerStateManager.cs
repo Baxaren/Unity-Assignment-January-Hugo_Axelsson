@@ -8,6 +8,7 @@ public partial class PlayerStateManager : MonoBehaviour
     public virtual void Awake() {
         Controller = GetComponent<CharacterController>();
         Input = GetComponent<PlayerInput>();
+
         PlayerSpeed = 1f;
         PlayerRotateSpeed = 180;
 
