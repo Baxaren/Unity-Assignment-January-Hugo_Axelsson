@@ -879,7 +879,6 @@ GameObject:
   - component: {fileID: 996374898}
   - component: {fileID: 996374897}
   - component: {fileID: 996374899}
-  - component: {fileID: 996374900}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -1036,21 +1035,6 @@ MonoBehaviour:
   m_DefaultActionMap: Character
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &996374900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996374891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f6e375d9f46ef4c97c8fa841f830cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprinter: {fileID: 484054055}
-  Jumper: {fileID: 2029084724}
-  Pouncer: {fileID: 367845324}
 --- !u!1 &1144357101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,6 +1338,7 @@ GameObject:
   - component: {fileID: 1576492617}
   - component: {fileID: 1576492616}
   - component: {fileID: 1576492615}
+  - component: {fileID: 1576492619}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -1439,6 +1424,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1576492619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576492614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f6e375d9f46ef4c97c8fa841f830cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprinter: {fileID: 484054055}
+  Jumper: {fileID: 2029084724}
+  Pouncer: {fileID: 367845324}
 --- !u!1 &2029084724
 GameObject:
   m_ObjectHideFlags: 0
