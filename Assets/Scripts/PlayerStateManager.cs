@@ -8,7 +8,7 @@ public partial class PlayerStateManager : MonoBehaviour
     public virtual void Awake() {
         Controller = GetComponent<CharacterController>();
         Input = GetComponent<PlayerInput>();
-        PlayerSpeed = 10f;
+        PlayerSpeed = 1f;
         PlayerRotateSpeed = 180;
 
         GravityVector = new Vector3(0, -9.81f, 0);
@@ -22,17 +22,15 @@ public partial class PlayerStateManager : MonoBehaviour
         ApplyGravity();
     }
 
-
-
     public void ApplyGravity(){
         Controller.Move(GravityVector * Time.deltaTime);
     }
 
-    public void Move(){
+    public virtual void Move(){
         Controller.Move(PlayerSpeed * MoveVector * Time.deltaTime);
     }
 
-    public void RotateTowardsVector(){
+    public virtual void RotateTowardsVector(){
         var xzDirection = new Vector3(MoveVector.x, 0, MoveVector.z);
         if (xzDirection.magnitude == 0 ) return;
 
