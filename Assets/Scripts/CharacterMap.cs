@@ -11,5 +11,4 @@ public partial class PlayerStateManager
         MoveVector.z = InputVector.y;
     }
 
-
 }

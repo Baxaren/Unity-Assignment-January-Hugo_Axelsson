@@ -13,6 +13,8 @@ public partial class PlayerStateManager : MonoBehaviour
         PlayerRotateSpeed = 180;
 
         GravityVector = new Vector3(0, -9.81f, 0);
+
+        JumpHeight = 10f;
     }
 
     // Update is called once per frame
@@ -39,7 +41,33 @@ public partial class PlayerStateManager : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, PlayerRotateSpeed);
     }
 
+    void MovementJump(){
+        GroundedPlayer = Controller.isGrounded;
+
+        if(GroundedPlayer){ // If on ground stop vertical movement.
+            PlayerVelocity.y = 0.0f;
+        }
+
+        if(JumpPressed && GroundedPlayer){ // If jump pressed and on ground.
+        PlayerVelocity.y += JumpHeight;
+        JumpPressed = false;
+        }
+    }
 
 
+
+
+public virtual void OnJump(){
+        Debug.Log("Jump Pressed!");
+
+        if(Controller.velocity.y == 0){
+            Debug.Log("Can Jump");
+            JumpPressed = true;
+
+        }
+        else{
+            Debug.Log("Can't Jump");
+        }
+    }
 
 }

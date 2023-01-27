@@ -17,7 +17,7 @@ public override void Awake() {
 
     public void Jump()
     {
-        // something if enabled activate function
+        // something if enabled activate function ovverride this
 
         Debug.Log("I am Jumping!");
 
