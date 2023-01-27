@@ -14,6 +14,8 @@ public partial class PlayerStateManager : MonoBehaviour
 
         GravityVector = new Vector3(0, -9.81f, 0);
 
+        GravityValue = -9.81f;
+
         JumpHeight = 10f;
     }
 
@@ -23,6 +25,7 @@ public partial class PlayerStateManager : MonoBehaviour
         Move();
         RotateTowardsVector();
         ApplyGravity();
+        MovementJump();
     }
 
     public void ApplyGravity(){
@@ -49,13 +52,13 @@ public partial class PlayerStateManager : MonoBehaviour
         }
 
         if(JumpPressed && GroundedPlayer){ // If jump pressed and on ground.
-        PlayerVelocity.y += JumpHeight;
+        PlayerVelocity.y += Mathf.Sqrt(JumpHeight * -1.0f * GravityValue);
         JumpPressed = false;
         }
+
+        PlayerVelocity.y += GravityValue * Time.deltaTime;
+        Controller.Move(PlayerVelocity * Time.deltaTime);
     }
-
-
-
 
 public virtual void OnJump(){
         Debug.Log("Jump Pressed!");

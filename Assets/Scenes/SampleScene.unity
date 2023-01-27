@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.17354415, g: 0.21695444, b: 0.2990534, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -409,6 +409,10 @@ MonoBehaviour:
   PlayerSpeed: 0
   PlayerRotateSpeed: 0
   GravityVector: {x: 0, y: 0, z: 0}
+  GravityValue: 0
+  GroundedPlayer: 0
+  PlayerVelocity: {x: 0, y: 0, z: 0}
+  JumpHeight: 0
 --- !u!143 &367845330
 CharacterController:
   m_ObjectHideFlags: 0
@@ -772,6 +776,10 @@ MonoBehaviour:
   PlayerSpeed: 0
   PlayerRotateSpeed: 0
   GravityVector: {x: 0, y: 0, z: 0}
+  GravityValue: 0
+  GroundedPlayer: 0
+  PlayerVelocity: {x: 0, y: 0, z: 0}
+  JumpHeight: 0
 --- !u!143 &484054061
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1188,7 +1196,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 9.51
   m_Depth: -1
   m_CullingMask:
@@ -1212,14 +1220,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 44, z: 3}
+  m_LocalRotation: {x: 0.43523106, y: 0, z: 0, w: 0.9003188}
+  m_LocalPosition: {x: 0, y: 19.8, z: -8.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 51.6, y: 0, z: 0}
 --- !u!1 &996374891
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,6 +1369,10 @@ MonoBehaviour:
   PlayerSpeed: 0
   PlayerRotateSpeed: 0
   GravityVector: {x: 0, y: 0, z: 0}
+  GravityValue: 0
+  GroundedPlayer: 0
+  PlayerVelocity: {x: 0, y: 0, z: 0}
+  JumpHeight: 0
 --- !u!114 &996374899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2014,6 +2026,10 @@ MonoBehaviour:
   PlayerSpeed: 0
   PlayerRotateSpeed: 0
   GravityVector: {x: 0, y: 0, z: 0}
+  GravityValue: 0
+  GroundedPlayer: 0
+  PlayerVelocity: {x: 0, y: 0, z: 0}
+  JumpHeight: 0
 --- !u!143 &2029084730
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2198,10 +2214,10 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.59
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -2249,11 +2265,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058195916}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.612842, y: -0.20005548, z: 0.1642105, w: 0.74661726}
   m_LocalPosition: {x: -2.862209, y: 1.1389767, z: -0.49354166}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 78.76, y: -30, z: 0}

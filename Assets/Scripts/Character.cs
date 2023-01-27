@@ -11,16 +11,14 @@ public partial class PlayerStateManager
     public Vector2 InputVector;
     public float PlayerSpeed;
     public float PlayerRotateSpeed;
-    public Vector3 GravityVector;
+    public Vector3 GravityVector; //remove this later
 
-
+    public float GravityValue;
 
     //Jump Variables
     public bool GroundedPlayer;
 
     public Vector3 PlayerVelocity;
-
-
 
     public float JumpHeight;
     private bool JumpPressed = false;

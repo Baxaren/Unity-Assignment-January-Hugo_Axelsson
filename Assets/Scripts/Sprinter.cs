@@ -13,6 +13,10 @@ public override void Awake() {
         PlayerRotateSpeed = 180;
 
         GravityVector = new Vector3(0, -9.81f, 0);
+
+        GravityValue = -9.81f;
+
+        JumpHeight = 25f;
     }
 
     public void Sprint()
