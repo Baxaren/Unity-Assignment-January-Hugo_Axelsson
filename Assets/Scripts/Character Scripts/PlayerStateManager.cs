@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public partial class PlayerStateManager : MonoBehaviour
 {
-    public virtual void Awake() {
+    public virtual void Awake() {  //Get character controller, inputs and set variables to standard values.
         Controller = GetComponent<CharacterController>();
         Input = GetComponent<PlayerInput>();
 
@@ -19,7 +19,6 @@ public partial class PlayerStateManager : MonoBehaviour
         JumpHeight = 0f;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();
@@ -29,14 +28,14 @@ public partial class PlayerStateManager : MonoBehaviour
     }
 
     public void ApplyGravity(){
-        Controller.Move(GravityVector * Time.deltaTime);
+        Controller.Move(GravityVector * Time.deltaTime);  //Apply Gravity with delta time
     }
 
     public virtual void Move(){
-        Controller.Move(PlayerSpeed * MoveVector * Time.deltaTime);
+        Controller.Move(PlayerSpeed * MoveVector * Time.deltaTime);  //Apply movement with delta time
     }
 
-    public virtual void RotateTowardsVector(){
+    public virtual void RotateTowardsVector(){  //Rotates Character
         var xzDirection = new Vector3(MoveVector.x, 0, MoveVector.z);
         if (xzDirection.magnitude == 0 ) return;
 
@@ -44,7 +43,7 @@ public partial class PlayerStateManager : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, PlayerRotateSpeed);
     }
 
-    void MovementJump(){
+    void MovementJump(){  //Handles the Jump and makes it not work while in air.
         GroundedPlayer = Controller.isGrounded;
 
         if(GroundedPlayer){ // If on ground stop vertical movement.
@@ -60,7 +59,7 @@ public partial class PlayerStateManager : MonoBehaviour
         Controller.Move(PlayerVelocity * Time.deltaTime);
     }
 
-    public virtual void OnJump(){
+    public virtual void OnJump(){  //Debug Tools for jump
         Debug.Log("Jump Pressed!");
 
         if(Controller.velocity.y == 0){
@@ -73,7 +72,7 @@ public partial class PlayerStateManager : MonoBehaviour
         }
     }
 
-    public virtual void OnAction(){
+    public virtual void OnAction(){  //Debug Tools for Action
         Debug.Log("Action Pressed");
     }
 
