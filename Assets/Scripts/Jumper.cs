@@ -19,12 +19,8 @@ public override void Awake() {
         JumpHeight = 50f;
     }
 
-    public void Jump()
-    {
-        // something if enabled activate function ovverride this
-
-        Debug.Log("I am Jumping!");
-
-
+    public override void OnAction(){
+        Debug.Log("Action Pressed Jumper");
     }
+    
 }

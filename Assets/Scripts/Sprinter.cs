@@ -19,16 +19,8 @@ public override void Awake() {
         JumpHeight = 25f;
     }
 
-    public void Sprint()
-    {
-        // something if enabled activate function
-
-        Debug.Log("I am Sprinting!");
-
-
+    public override void OnAction(){
+        Debug.Log("Action Pressed Sprinter");
     }
-
-
-
 
 }

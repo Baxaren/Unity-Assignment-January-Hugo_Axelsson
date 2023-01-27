@@ -37,7 +37,7 @@ public partial class @CharacterInput1 : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Actions"",
+                    ""name"": ""Action"",
                     ""type"": ""Button"",
                     ""id"": ""b8cfd64e-9bcc-4924-a3c1-3a7c3d2e7bb3"",
                     ""expectedControlType"": ""Button"",
@@ -129,7 +129,7 @@ public partial class @CharacterInput1 : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Actions"",
+                    ""action"": ""Action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -137,17 +137,6 @@ public partial class @CharacterInput1 : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""aa5573c8-bdea-4b19-9acf-72dd41c8dc01"",
                     ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fc68ce18-2833-4d55-8da2-155882ded5f7"",
-                    ""path"": ""<Touchscreen>/touch0/tap"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -163,7 +152,7 @@ public partial class @CharacterInput1 : IInputActionCollection2, IDisposable
         // Character
         m_Character = asset.FindActionMap("Character", throwIfNotFound: true);
         m_Character_Movement = m_Character.FindAction("Movement", throwIfNotFound: true);
-        m_Character_Actions = m_Character.FindAction("Actions", throwIfNotFound: true);
+        m_Character_Action = m_Character.FindAction("Action", throwIfNotFound: true);
         m_Character_Jump = m_Character.FindAction("Jump", throwIfNotFound: true);
     }
 
@@ -225,14 +214,14 @@ public partial class @CharacterInput1 : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Character;
     private ICharacterActions m_CharacterActionsCallbackInterface;
     private readonly InputAction m_Character_Movement;
-    private readonly InputAction m_Character_Actions;
+    private readonly InputAction m_Character_Action;
     private readonly InputAction m_Character_Jump;
     public struct CharacterActions
     {
         private @CharacterInput1 m_Wrapper;
         public CharacterActions(@CharacterInput1 wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Character_Movement;
-        public InputAction @Actions => m_Wrapper.m_Character_Actions;
+        public InputAction @Action => m_Wrapper.m_Character_Action;
         public InputAction @Jump => m_Wrapper.m_Character_Jump;
         public InputActionMap Get() { return m_Wrapper.m_Character; }
         public void Enable() { Get().Enable(); }
@@ -246,9 +235,9 @@ public partial class @CharacterInput1 : IInputActionCollection2, IDisposable
                 @Movement.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnMovement;
-                @Actions.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnActions;
-                @Actions.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnActions;
-                @Actions.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnActions;
+                @Action.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnAction;
+                @Action.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnAction;
+                @Action.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnAction;
                 @Jump.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnJump;
@@ -259,9 +248,9 @@ public partial class @CharacterInput1 : IInputActionCollection2, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
-                @Actions.started += instance.OnActions;
-                @Actions.performed += instance.OnActions;
-                @Actions.canceled += instance.OnActions;
+                @Action.started += instance.OnAction;
+                @Action.performed += instance.OnAction;
+                @Action.canceled += instance.OnAction;
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
@@ -272,7 +261,7 @@ public partial class @CharacterInput1 : IInputActionCollection2, IDisposable
     public interface ICharacterActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnActions(InputAction.CallbackContext context);
+        void OnAction(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
     }
 }

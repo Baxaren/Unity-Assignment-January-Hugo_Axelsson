@@ -60,7 +60,7 @@ public partial class PlayerStateManager : MonoBehaviour
         Controller.Move(PlayerVelocity * Time.deltaTime);
     }
 
-public virtual void OnJump(){
+    public virtual void OnJump(){
         Debug.Log("Jump Pressed!");
 
         if(Controller.velocity.y == 0){
@@ -71,6 +71,10 @@ public virtual void OnJump(){
         else{
             Debug.Log("Can't Jump");
         }
+    }
+
+    public virtual void OnAction(){
+        Debug.Log("Action Pressed");
     }
 
 }

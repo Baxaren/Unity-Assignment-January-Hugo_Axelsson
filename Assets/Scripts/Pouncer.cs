@@ -19,12 +19,8 @@ public override void Awake() {
         JumpHeight = 30f;
     }
 
-    public void Pounce()
-    {
-        // something if enabled activate function
-
-        Debug.Log("I am Pouncing!");
-
-
+    public override void OnAction(){
+        Debug.Log("Action Pressed Pouncer");
     }
+
 }
