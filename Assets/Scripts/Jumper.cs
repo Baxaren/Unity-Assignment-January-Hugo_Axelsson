@@ -21,6 +21,7 @@ public override void Awake() {
 
     public override void OnAction(){
         Debug.Log("Action Pressed Jumper");
+        
     }
     
 }
