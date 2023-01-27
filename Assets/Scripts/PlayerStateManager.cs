@@ -9,14 +9,14 @@ public partial class PlayerStateManager : MonoBehaviour
         Controller = GetComponent<CharacterController>();
         Input = GetComponent<PlayerInput>();
 
-        PlayerSpeed = 1f;
+        PlayerSpeed = 0f;
         PlayerRotateSpeed = 180;
 
         GravityVector = new Vector3(0, -9.81f, 0);
 
         GravityValue = -9.81f;
 
-        JumpHeight = 10f;
+        JumpHeight = 0f;
     }
 
     // Update is called once per frame

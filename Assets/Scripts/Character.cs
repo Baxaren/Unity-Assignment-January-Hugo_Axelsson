@@ -11,7 +11,7 @@ public partial class PlayerStateManager
     public Vector2 InputVector;
     public float PlayerSpeed;
     public float PlayerRotateSpeed;
-    public Vector3 GravityVector; //remove this later
+    public Vector3 GravityVector;
 
     public float GravityValue;
 
