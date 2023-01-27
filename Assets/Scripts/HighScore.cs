@@ -6,7 +6,6 @@ public class HighScore : MonoBehaviour
 {
     public Text score;
     public Text highScore;
-
     public int NumberScore;
 
     void start()
@@ -17,10 +16,10 @@ public class HighScore : MonoBehaviour
 
     public void ScoreGained ()
     {
-        NumberScore = NumberScore + 1;
+        NumberScore = NumberScore + 1;  // add 1 to score
         score.text = NumberScore.ToString();
 
-        if( NumberScore > PlayerPrefs.GetInt("HighScore", 0))
+        if( NumberScore > PlayerPrefs.GetInt("HighScore", 0))  // if score is more than high score, record high score
         {
             PlayerPrefs.SetInt("HighScore", NumberScore);
             highScore.text = NumberScore.ToString();
@@ -29,7 +28,7 @@ public class HighScore : MonoBehaviour
 
     }
 
-    public void ResetScore()
+    public void ResetScore()  // reset highscore as well as current score
     {
         PlayerPrefs.DeleteKey("HighScore");
         highScore.text = "0";
