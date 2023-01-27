@@ -10,9 +10,9 @@ public class CharacterChanger : MonoBehaviour
 
     public Vector3 Spawn;
 
-    private void OnTriggerEnter(Collider other)   //When tag hits collider change to next sub-class in que
+    private void OnTriggerEnter(Collider other)   //When tagged gameobject hits collider change to next sub-class in queue
     {
-        if(other.tag == "Sprinter"){
+        if(other.tag == "Sprinter"){    //Disable Sprinter, Reset Jumper to Spawn, then Enable Jumper
         Sprinter.SetActive(false);
         Jumper.transform.position = Spawn;
         Jumper.SetActive(true);
@@ -20,7 +20,7 @@ public class CharacterChanger : MonoBehaviour
         Debug.Log("Jumper is now Active");
         }
         
-        if(other.tag == "Jumper"){
+        if(other.tag == "Jumper"){    //Disable Jumper, Reset Pouncer to Spawn, then Enable Pouncer
         Jumper.SetActive(false);
         Pouncer.transform.position = Spawn;
         Pouncer.SetActive(true);
@@ -28,7 +28,7 @@ public class CharacterChanger : MonoBehaviour
         Debug.Log("Pouncer is now Active");
         }
 
-        if(other.tag == "Pouncer"){
+        if(other.tag == "Pouncer"){    //Disable Pouncer, Reset Sprinter to Spawn, then Enable Sprinter
         Pouncer.SetActive(false);
         Sprinter.transform.position = Spawn;
         Sprinter.SetActive(true);

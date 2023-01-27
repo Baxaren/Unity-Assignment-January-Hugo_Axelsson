@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class Sprinter : PlayerStateManager
 {
-    //Use public override void later for function so that it inherits movement but overrides some things
 
 public override void Awake() {
         Controller = GetComponent<CharacterController>();
